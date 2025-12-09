@@ -1,17 +1,114 @@
-title: 'RustBusan'
-description: "RustBusan is a community for Rust developers in Busan."
-baseurl: "/"
-url: "https://rustbusan.github.io"
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
-header_pages:
-  - index.md
-  - about.md
-  - contact.md
-
-style: hacker
-
-footer: 'follow us on <a href="https://github.com/rustbusan">GitHub</a>'
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title: RustBusan
+email: rustbusan@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  이 모임은 Rust 언어의 안전성과 속도를 바탕으로 퀀트(Quant) 트레이딩 시스템 구축, 임베디드(Embedded) 시스템 개발과 같은 실무적이고 전문적인 주제들을 깊이 있게 다루며, 
+  더 나아가 효율적이고 안정적인 소프트웨어 개발의 근간이 되는 CS(컴퓨터 과학) 기초적인 기술을 직접 구현하고, 연습하는 것을 강조합니다.
+# twitter_username: username
+github_username: rustbusan
+minimal_mistakes_skin: default
+search: true
 
 # Build settings
 markdown: kramdown
-remote_theme: b2a3e8/jekyll-theme-console
+remote_theme: mmistakes/minimal-mistakes
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+include:
+  - _pages
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
+author:
+  name   : "RustBusan"
+  avatar : "/assets/images/bio-photo.png"
+  bio    : "러스트 부산 사용자 모임(Rust Busan User Group)은 고성능 시스템 프로그래밍 언어인 Rust를 활용하여 지역 개발자들이 지식과 경험을 공유하는 기술 커뮤니티입니다."
+  links:
+    # - label: "Website"
+    #   icon: "fas fa-fw fa-link"
+    #   url: "https://"
+    # - label: "Twitter"
+    #   icon: "fab fa-fw fa-twitter-square"
+    #   url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/rustbusan"
+    # - label: "Instagram"
+    #   icon: "fab fa-fw fa-instagram"
+    #   url: "https://instagram.com/"
+
+footer:
+  links:
+    # - label: "Twitter"
+    #   icon: "fab fa-fw fa-twitter-square"
+    #   url: "https://twitter.com/"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/rustbusan"
+    # - label: "Instagram"
+    #   icon: "fab fa-fw fa-instagram"
+    #   url: "https://instagram.com/"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      # comments: true
+      # share: true
+      # related: true
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
