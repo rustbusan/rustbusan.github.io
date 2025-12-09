@@ -1,0 +1,17 @@
+title: 'RustBusan'
+description: "RustBusan is a community for Rust developers in Busan."
+baseurl: "/"
+url: "https://rustbusan.github.io"
+
+header_pages:
+  - index.md
+  - about.md
+  - contact.md
+
+style: hacker
+
+footer: 'follow us on <a href="https://github.com/rustbusan">GitHub</a>'
+
+# Build settings
+markdown: kramdown
+remote_theme: b2a3e8/jekyll-theme-console
